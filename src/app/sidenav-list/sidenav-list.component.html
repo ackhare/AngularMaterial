@@ -1,0 +1,30 @@
+<mat-nav-list *ngIf="authorized == true">
+    <a mat-list-item *ngIf="isAuthorized() === true && (isROUser() === true || isUser() === true || isAdmin() === true)" routerLink="/loadCycle" (click)="onSidenavClose()">
+        <span class="nav-caption">Load Cycle</span>
+    </a>
+    <a mat-list-item *ngIf="isAuthorized() === true && (isROUser() === true || isUser() === true || isAdmin() === true)" routerLink="/ensToBM" (click)="onSidenavClose()">
+        <span class="nav-caption">ENS to BM</span>
+    </a>
+    <a mat-list-item *ngIf="isAuthorized() === true && (isROUser() === true || isUser() === true || isAdmin() === true)" routerLink="/pppBMToPPP" (click)="onSidenavClose()">
+        <span class="nav-caption">PPP BM to PPP</span>
+    </a>
+    <a mat-list-item *ngIf="isAuthorized() === true && (isROUser() === true || isUser() === true || isAdmin() === true)" routerLink="/rulesModeler" (click)="onSidenavClose()">
+        <span class="nav-caption">Rules Modeler</span>
+    </a>
+    <a mat-list-item *ngIf="isAuthorized() === true && (isROUser() === true || isUser() === true || isAdmin() === true)" routerLink="/bmRules" (click)="onSidenavClose()">
+        <span class="nav-caption">BM Rules</span>
+    </a>
+    <mat-list-item *ngIf="isAuthorized() === true && (isROUser() === true || isUser() === true || isAdmin() === true)" [matMenuTriggerFor]="menu">
+        <a matline><span class="nav-caption">Offers</span></a>
+    </mat-list-item>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngIf="isAuthorized() === true && (isROUser() === true || isUser() === true || isAdmin() === true)" routerLink="/offersFromDatabase">Offers From Database</button>
+        <button mat-menu-item *ngIf="isAuthorized() === true && (isROUser() === true || isUser() === true || isAdmin() === true)" routerLink="/offersFromCollection">Offers From Collection</button>
+    </mat-menu>
+    <a mat-list-item *ngIf="isAuthorized() === true && (isROUser() === true || isUser() === true || isAdmin() === true)" routerLink="/audit" (click)="onSidenavClose()">
+      <span class="nav-caption">Audit</span>
+    </a>
+    <a mat-list-item *ngIf="isAuthorized() === true && (isROUser() === true || isUser() === true || isAdmin() === true)" href="javascript:void(0)" (click)="logout()">
+        <span class="nav-caption">Logout</span>
+    </a>
+</mat-nav-list>
