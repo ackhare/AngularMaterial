@@ -9,7 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-
+import {TreeDynamicExample} from './treeDynamicExample/tree-dynamic-example';
 import { CommonModule } from '@angular/common';
 
 import { RxFormBuilder } from '@rxweb/reactive-form-validators';
@@ -26,6 +26,7 @@ import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    TreeDynamicExample ,
     SidenavListComponent
   ],
   imports: [
@@ -41,7 +42,7 @@ import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
     MatPaginatorModule,
     MatSortModule,
     MatDialogModule,
-    MatProgressBarModule
+  MatProgressBarModule
   ],
   providers: [
     RxFormBuilder, 
@@ -54,7 +55,7 @@ import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
   exports: [
     
   ],
-  entryComponents: [],
+  entryComponents: [ ],
   bootstrap: [AppComponent]
 })
 

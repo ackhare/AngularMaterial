@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import {TreeDynamicExample} from './treeDynamicExample/tree-dynamic-example';
 const routes: Routes = [  
   {
     path: '', 
@@ -10,10 +10,10 @@ const routes: Routes = [
     path: '#', 
     redirectTo: '#', 
     pathMatch: 'full' },    
-  // {
-  //   path: 'login',
-  //   component: LoginComponent
-  // },    
+  {
+    path: 'treeNode',
+    component: TreeDynamicExample
+  },    
 
   // {
   //   path: 'databaseOffers/:id/:mode', 
