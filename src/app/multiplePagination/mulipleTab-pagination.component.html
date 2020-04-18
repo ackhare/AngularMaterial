@@ -1,0 +1,108 @@
+<mat-tab-group (selectedTabChange)="tabChangeBackEvent($event)">
+    <mat-tab label="Demo of Mat Tab">
+        <mat-toolbar color="primary" class="fixed-header">
+            <mat-toolbar-row>
+                <a mat-button>Demo of Mat Tab</a>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <div flex="50" *ngIf="showSpinnerForTodos==true">
+            <mat-progress-spinner [color]="color" [mode]="mode" [value]="value">
+            </mat-progress-spinner>
+        </div>
+
+
+        <mat-card *ngIf="showSpinnerForTodos==false" class="my-card">
+            <mat-card-header *ngIf="showSpinnerForTodos==false">
+                <mat-card-title>Todos Listing</mat-card-title>
+            </mat-card-header>
+            <mat-table [dataSource]="todosDatasource" #todoSort="matSort" matSort>
+                <ng-container matColumnDef="userId">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>User Id</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="userId">{{row.userId}}
+                    </mat-cell>
+
+                </ng-container>
+
+
+                <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="id">{{row.id}}
+                    </mat-cell>
+
+                </ng-container>
+                <ng-container matColumnDef="title">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="title"> {{row.title}} </mat-cell>
+
+                </ng-container>
+                <ng-container matColumnDef="completed">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Completed</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="completed"> {{row.completed}} </mat-cell>
+
+                </ng-container>
+
+
+
+                <mat-header-row *matHeaderRowDef="displayedColumnsTodos"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumnsTodos;"></mat-row>
+            </mat-table>
+            <mat-paginator #todoPaginator [length]="todos.length" [pageSize]="pageSize"
+                [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+        </mat-card>
+    </mat-tab>
+    <mat-tab label="Posts">
+
+        <mat-toolbar color="primary" class="fixed-header">
+            <mat-toolbar-row>
+
+                <a mat-button>Posts</a>
+
+
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <div flex="50" *ngIf="showSpinnerForPosts==true">
+            <mat-progress-spinner [color]="color" [mode]="mode" [value]="value">
+            </mat-progress-spinner>
+        </div>
+
+
+        <mat-card *ngIf="showSpinnerForPosts==false" class="my-card">
+            <mat-card-header *ngIf="showSpinnerForPosts==false">
+                <mat-card-title>Posts</mat-card-title>
+            </mat-card-header>
+            <mat-table [dataSource]="postsDatasource" #postsSort="matSort" matSort>
+                <ng-container matColumnDef="userId">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>User Id</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="userId">{{row.userId}}
+                    </mat-cell>
+
+                </ng-container>
+
+
+                <ng-container matColumnDef="id">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Id</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="id">{{row.id}}
+                    </mat-cell>
+
+                </ng-container>
+                <ng-container matColumnDef="title">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Title</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="title"> {{row.title}} </mat-cell>
+
+                </ng-container>
+                <ng-container matColumnDef="body">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header>Body</mat-header-cell>
+                    <mat-cell *matCellDef="let row" data-label="body"> {{row.body}} </mat-cell>
+
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="displayedColumnsPosts"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumnsPosts;"></mat-row>
+            </mat-table>
+            <mat-paginator #postsPaginator [length]="posts.length" [pageSize]="pageSize"
+                [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+
+        </mat-card>
+    </mat-tab>
+
+</mat-tab-group>

@@ -10,8 +10,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import {TreeDynamicExample} from './treeDynamicExample/tree-dynamic-example';
+import {MulipleTabPagination} from './multiplePagination/mulipleTab-pagination.component';
 import { CommonModule } from '@angular/common';
-
+import {AngularDemoService} from './service/angularDemoService';
 import { RxFormBuilder } from '@rxweb/reactive-form-validators';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
@@ -27,7 +28,8 @@ import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
     HeaderComponent,
     FooterComponent,
     TreeDynamicExample ,
-    SidenavListComponent
+    SidenavListComponent,
+    MulipleTabPagination
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
       provide: LocationStrategy, 
       useClass: HashLocationStrategy
     },
-    CookieService
+    CookieService,
+    AngularDemoService
   ],
   exports: [
     

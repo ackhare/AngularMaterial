@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {TreeDynamicExample} from './treeDynamicExample/tree-dynamic-example';
+import {MulipleTabPagination} from './multiplePagination/mulipleTab-pagination.component';
 const routes: Routes = [  
   {
     path: '', 
@@ -15,10 +16,10 @@ const routes: Routes = [
     component: TreeDynamicExample
   },    
 
-  // {
-  //   path: 'databaseOffers/:id/:mode', 
-  //   component: DatabaseOfferComponent
-  // },
+  {
+    path: 'mulipleTabPagination', 
+    component: MulipleTabPagination
+  },
   
 ];
 
