@@ -23,8 +23,8 @@ export class MulipleTabPagination implements OnInit {
   pageEvent: PageEvent;
   showSpinnerForPosts: any;
   showSpinnerForTodos: any;
-  posts:any = [];
-  todos:any = [];
+  posts: any = [];
+  todos: any = [];
   postsDatasource: MatTableDataSource<any>;
   todosDatasource: MatTableDataSource<any>;
 
@@ -50,8 +50,8 @@ export class MulipleTabPagination implements OnInit {
 
   ngOnInit() {
     this.showSpinnerForPosts = true;
-    this.posts=[];
-    this.todos=[];
+    this.posts = [];
+    this.todos = [];
     this.toDosListing();
   }
   ngAfterViewInit() {
